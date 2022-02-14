@@ -68,19 +68,19 @@ class MainActivity : AppCompatActivity() {
             result = calcAdd(op1String.toDouble(), op2String.toDouble())
         }
         else if (selection == "calcSubtract" && validInputs[0] && validInputs[1]) {
-            result = calcAdd(op1String.toDouble(), op2String.toDouble())
+            result = calcSubtract(op1String.toDouble(), op2String.toDouble())
         }
         else if (selection == "calcMultiply" && validInputs[0] && validInputs[1]) {
-            result = calcAdd(op1String.toDouble(), op2String.toDouble())
+            result = calcMultiply(op1String.toDouble(), op2String.toDouble())
         }
         else if (selection == "calcDivide" && validInputs[0] && validInputs[1]) {
-            result = calcAdd(op1String.toDouble(), op2String.toDouble())
+            result = calcDivide(op1String.toDouble(), op2String.toDouble())
         }
         else if (selection == "calcPercent" && validInputs[0]) {
-            result = calcAdd(op1String.toDouble(), 0.0)
+            result = calcPercent(op1String.toDouble(), 0.0)
         }
         else if (selection == "calcSquareRoot" && validInputs[0]) {
-            result = calcAdd(op1String.toDouble(), 0.0)
+            result = calcSquareRoot(op1String.toDouble(), 0.0)
         }
         else {
             binding.resultText.text = ""
