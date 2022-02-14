@@ -73,12 +73,15 @@ class MainActivity : AppCompatActivity() {
         else if (selection == "calcMultiply" && validInputs[0] && validInputs[1]) {
             result = calcMultiply(op1String.toDouble(), op2String.toDouble())
         }
-        else if (selection == "calcDivide" && validInputs[0] && validInputs[1]) {
+        // Check /0 also
+        else if (selection == "calcDivide" && validInputs[0] && validInputs[1] && op2String.toDouble() != 0.0) {
             result = calcDivide(op1String.toDouble(), op2String.toDouble())
         }
+        // only need op1 valid
         else if (selection == "calcPercent" && validInputs[0]) {
             result = calcPercent(op1String.toDouble(), 0.0)
         }
+        // only need op1 valid
         else if (selection == "calcSquareRoot" && validInputs[0]) {
             result = calcSquareRoot(op1String.toDouble(), 0.0)
         }
