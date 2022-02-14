@@ -6,45 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <RadioGroup
-        android:id="@+id/funcRadioGrp"
-        android:layout_width="158dp"
-        android:layout_height="152dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintBottom_toBottomOf="@+id/op2_value"
-        app:layout_constraintEnd_toStartOf="@+id/op2_label"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/op1_label">
-
-        <RadioButton
-            android:id="@+id/ohmsRadioBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/ohmsRBtn_label" />
-
-        <RadioButton
-            android:id="@+id/voltsRadioBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/voltsRBtn_label" />
-
-        <RadioButton
-            android:id="@+id/ampsRadioBtn"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:minHeight="48dp"
-            android:text="@string/ampsRBtn_label" />
-    </RadioGroup>
-
     <TextView
         android:id="@+id/op1_label"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:layout_marginEnd="64dp"
-        android:text=""
+        android:layout_marginEnd="5dp"
+        android:text="@string/operand_1"
         app:layout_constraintBottom_toTopOf="@+id/op1_value"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -55,11 +23,11 @@
         android:id="@+id/op1_value"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="@string/op1_hint"
         android:importantForAutofill="no"
-        android:inputType="numberDecimal"
+        android:inputType="numberDecimal|numberSigned"
         android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/op2_label"
         app:layout_constraintEnd_toEndOf="parent"
@@ -70,7 +38,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="64dp"
+        android:layout_marginEnd="184dp"
+        android:text="@string/operand_2"
         app:layout_constraintBottom_toTopOf="@+id/op2_value"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/op1_value"
@@ -81,11 +50,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="16dp"
         android:ems="10"
         android:hint="@string/op2_hint"
         android:importantForAutofill="no"
-        android:inputType="numberDecimal"
+        android:inputType="numberDecimal|numberSigned"
         android:minHeight="48dp"
         app:layout_constraintBottom_toTopOf="@+id/result_label"
         app:layout_constraintEnd_toEndOf="parent"
@@ -95,15 +64,15 @@
         android:id="@+id/result_label"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="180dp"
         android:text="@string/result_ext"
         android:textAlignment="center"
         android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.43"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/funcRadioGrp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/result_text"
@@ -114,19 +83,74 @@
         android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.43"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/result_label"
         tools:text="234.5" />
 
     <Button
-        android:id="@+id/calcBtn"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="67dp"
-        android:text="@string/calcBtn_lbl"
+        android:id="@+id/addBtn"
+        android:layout_width="115dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="0dp"
+        android:text="@string/addBtn_lbl"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.43"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/result_text" />
+
+    <Button
+        android:id="@+id/subtractBtn"
+        android:layout_width="115dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="0dp"
+        android:text="@string/subtractBtn_lbl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/result_text" />
+
+    <Button
+        android:id="@+id/multiplyBtn"
+        android:layout_width="115dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="62dp"
+        android:text="@string/multiplyBtn_lbl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/result_text" />
+
+    <Button
+        android:id="@+id/divideBtn"
+        android:layout_width="115dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="62dp"
+        android:text="@string/divideBtn_lbl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/result_text" />
+
+    <Button
+        android:id="@+id/percentBtn"
+        android:layout_width="115dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="123dp"
+        android:text="@string/percentBtn_lbl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/result_text" />
+
+    <Button
+        android:id="@+id/squareRootBtn"
+        android:layout_width="115dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="123dp"
+        android:text="@string/squareRootBtn_lbl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/result_text" />
 

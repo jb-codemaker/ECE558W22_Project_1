@@ -1,17 +1,19 @@
 <resources>
     <string name="app_name">ECE558W22 Project 1</string>
-    <string name="ohmsRBtn_label">Calculate Resistance</string>
-    <string name="voltsRBtn_label">Calculate Voltage</string>
-    <string name="ampsRBtn_label">Calculate Current</string>
     <string name="funcRBG_label">OPERATION</string>
     <string name="result_label">RESULT</string>
     <string name="result_ext">RESULT</string>
     <string name="calcBtn_lbl">Calculate</string>
-    <string name="op1_label_hint">Enter a Decmal Number</string>
-    <string name="op2_hint">Enter a Decimal number</string>
-    <string name="op1_hint">Enter a Decimal number</string>
-    <string name="opLabel_volts">VOLTS</string>
-    <string name="opLabel_amps">AMPS</string>
-    <string name="opLabel_ohms">OHMS</string>
+    <string name="addBtn_lbl">Add</string>
+    <string name="subtractBtn_lbl">Subtract</string>
+    <string name="multiplyBtn_lbl">Multiply</string>
+    <string name="divideBtn_lbl">Divide</string>
+    <string name="percentBtn_lbl">Percent (of #1)</string>
+    <string name="squareRootBtn_lbl">Sq. Root (of #1)</string>
+    <string name="op1_label_hint">Enter a Decimal Number</string>
+    <string name="op2_hint">Decimal number</string>
+    <string name="op1_hint">Decimal number</string>
     <string name="invalid_operand_message">Invalid value(s)</string>
+    <string name="operand_1">Operand 1 (used for sq. rt. and percent)</string>
+    <string name="operand_2">Operand 2</string>
 </resources>
